@@ -65,6 +65,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_MOD_VERSION = "mod_version";
+   
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -184,6 +185,19 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
                     Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
                 }
             }
+
+        } else if (preference.getKey().equals(KEY_MOD_VERSION)) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(getActivity(), BeanBag.class);
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+            }
+
         } else if (preference.getKey().equals(KEY_BUILD_NUMBER)) {
             // Don't enable developer options for secondary users.
             if (UserHandle.myUserId() != UserHandle.USER_OWNER) return true;
