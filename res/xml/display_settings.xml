@@ -95,4 +95,9 @@
                 android:title="@string/animations"
                 android:fragment="com.android.settings.merk.Animations" />
 
+<PreferenceScreen	
+android:id="@+id/wakelock_blocker" 
+android:layout="@layout/preference_wakelockblocker"
+android:title="@string/wakelock_blocker"	
+android:fragment="com.android.settings.merk.WakeLockBlocker" />
 </PreferenceScreen>
