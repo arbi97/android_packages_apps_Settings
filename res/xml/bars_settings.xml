@@ -56,6 +56,7 @@
 			android:summary="@string/qs_configurable_summary"
 			android:title="@string/qs_configurable_title" />
 	</PreferenceCategory>
+
 	<!-- Network traffic meter -->
 	<PreferenceCategory
 		android:key="category_network_traffic"
