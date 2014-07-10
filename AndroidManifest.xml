@@ -89,7 +89,7 @@
 	android:name="android.permission.ACCESS_SUPERUSER"
 	android:description="@string/superuser_description_more"
 	android:icon="@drawable/ic_action_permission"
-	android:lable="@string/superuser_description"
+	android:label="@string/superuser_description"
 	android:logo="@drawable/ic_action_permission"
 	android:permissionGroup="android.permission-group.SUPERUSER"
 	android:protectionLevel="dangerous" />
@@ -107,7 +107,7 @@
 	<!-- is not the device owner (user id 0). -->
 	<activity
 	    android:name="com.koushikdutta.superuser.NotifyActivity"
-	    android:configsChanges="keyboardHidden|orientation|screenSize"
+	    android:configChanges="keyboardHidden|orientation|screenSize"
 	    android:label="@string/superuser"
 	    android:launchMode="singleTask"
 	    android:excludeFromRecents="true"
@@ -119,7 +119,7 @@
 	<!-- Multiple instances of this activity cab be running for multiple su requests -->
 	<activity
 	    android:name="com.koushikdutta.superuser.MultitaskSuRequestActivity"
-	    android:configsChanges="keyboardHidden|orientation|screenSize"
+	    android:configChanges="keyboardHidden|orientation|screenSize"
 	    android:excludeFromRecents="true"
 	    android:exported="false"
 	    android:label="@string/request"
