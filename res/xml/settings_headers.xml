@@ -97,6 +97,12 @@
         android:fragment="org.omnirom.omnigears.interfacesettings.MoreInterfaceSettings"
         android:icon="@drawable/empty_icon" />
 
+<header
+ android:key="lcd_density_setup"
+ android:fragment="com.android.settings.spirit.DensityChanger"
+ android:title="@string/lcd_density_title"
+ android:summary="@string/lcd_density_summary" /> 
+
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />

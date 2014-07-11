@@ -210,6 +210,17 @@
             </intent-filter>
         </receiver>
 
+
+
+ <activity
+android:name=".fragments.DensityChanger"
+android:label="@string/lcd_density_wizard" >
+ <intent-filter>
+ <action android:name="android.intent.action.MAIN" />
+ <category android:name="com.android.settings.SHORTCUT" />
+ </intent-filter>
+ </activity>
+
         <!-- Wireless Controls -->
 
         <activity android:name="Settings$WirelessSettingsActivity"
