@@ -85,4 +85,9 @@
                 android:entries="@array/screen_off_animation_entries"
                 android:entryValues="@array/screen_off_animation_values" />
 
+	<CheckBoxPreference
+		 android:key="notification_peek"
+		 android:title="@string/notification_peek_title"
+		 android:summary="@string/notification_peek_summary" />
+
 </PreferenceScreen>

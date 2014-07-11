@@ -210,8 +210,6 @@
             </intent-filter>
         </receiver>
 
-
-
  <activity
 android:name=".fragments.DensityChanger"
 android:label="@string/lcd_density_wizard" >
@@ -2002,15 +2000,5 @@ android:label="@string/lcd_density_wizard" >
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-        <!-- started from ... somewhere -->
-        <activity
-            android:name=".BeanBag"
-            android:label="BeanBag"
-            android:icon="@drawable/redbean2"
-            android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen"
-            android:hardwareAccelerated="true"
-            android:launchMode="singleInstance"
-            android:excludeFromRecents="true" />
     </application>
 </manifest>
