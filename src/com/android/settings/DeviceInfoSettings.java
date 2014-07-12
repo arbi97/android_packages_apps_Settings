@@ -96,6 +96,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
+	findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_VERSION, "ro.merk.version");
 
         if (!SELinux.isSELinuxEnabled()) {
@@ -190,7 +191,9 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
-                Intent intent = new Intent(getActivity(), BeanBag.class);
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.setClassName("android",
+			com.android.internal.app.KattaGangActivity.class.getName());
                 try {
                     startActivity(intent);
                 } catch (Exception e) {
