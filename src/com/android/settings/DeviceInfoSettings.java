@@ -70,6 +70,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
     long[] mHits = new long[3];
+    long[] mTaps = new long[3]
     int mDevHitCountdown;
     Toast mDevHitToast;
 
@@ -96,6 +97,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
+	findPreference(KEY_MOD_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_VERSION, "ro.merk.version");
 
         if (!SELinux.isSELinuxEnabled()) {
@@ -187,8 +189,8 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
             }
 
         } else if (preference.getKey().equals(KEY_MOD_VERSION)) {
-            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
-            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            System.arraycopy(mTaps, 1, mTaps, 0, mTaps.length-1);
+            mTaps[mTaps.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
 		intent.setClassName("android",
