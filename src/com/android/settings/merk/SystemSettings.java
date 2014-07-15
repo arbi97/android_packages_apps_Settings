@@ -189,9 +189,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         } catch (NameNotFoundException e) {
             return false;
         }
-
-	return true;
-
     }
 
      @Override
