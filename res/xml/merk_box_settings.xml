@@ -28,8 +28,8 @@ limitations under the License.
    <PreferenceScreen
         android:key="menu_settings"
         android:fragment="com.android.settings.merk.interfacesettings.MenuSettings"
-        android:icon="@drawable/ic_menu"
-        android:title="@string/interace_menus_title" />
+        android:icon="@drawable/ic_menus"
+        android:title="@string/interface_menus_title" />
 
     <PreferenceScreen
         android:key="notification_panel"
@@ -47,5 +47,5 @@ limitations under the License.
             android:key="more_interface_settings"
             android:title="@string/interface_more_title" 
 	    android:icon="@drawable/ic_more"
-	    android:framgment="com.android.merk.interfacesettings.MoreInterfaceSettings"/>
+	    android:framgment="com.android.settings.merk.interfacesettings.MoreInterfaceSettings"/>
 </PreferenceScreen>
