@@ -212,7 +212,6 @@
 	<activity android:name=".merk.interfacesettings.LockscreenSettings" />
 	<activity android:name=".merk.interfacesettings.LockscreenTargets" />
 	<activity android:name=".merk.interfacesettings.MenuSettings" />
-	<activity android:name=".merk.interfacesettings.MoreInterfaceSettings" />
 	<activity android:name=".merk.interfacesettings.NavBar" />
 	<activity android:name=".merk.interfacesettings.NavBarDimen" />
 	<activity android:name=".merk.interfacesettings.NavRing" />
