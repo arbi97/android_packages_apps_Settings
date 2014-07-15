@@ -47,8 +47,9 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+    }
 
-    @Override
+     @Override
     public void onResume() {
         super.onResume();
     }
