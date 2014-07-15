@@ -32,7 +32,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
 
-import com.android.settings.merk.R;
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 

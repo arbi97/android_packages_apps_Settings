@@ -44,7 +44,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.android.settings.merk.R;
+import com.android.settings.R;
 
 public class BrightnessSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {

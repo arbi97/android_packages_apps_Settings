@@ -45,7 +45,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.android.settings.merk.R;
+import com.android.settings.R;
 import com.android.settings.merk.chameleonos.SeekBarPreference;
 
 public class ButtonBrightnessSettings extends SettingsPreferenceFragment implements

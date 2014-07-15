@@ -56,7 +56,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import com.android.settings.merk.R;
+import com.android.settings.R;
 
 public class AutoBrightnessDialog extends AlertDialog
         implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener {
