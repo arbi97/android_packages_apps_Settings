@@ -16,6 +16,8 @@
 
 package com.android.settings.merk;
 
+import android.content.Intent;
+import android.app.AlertDialog;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.ContentResolver;
