@@ -47,5 +47,5 @@ limitations under the License.
             android:key="more_interface_settings"
             android:title="@string/interface_more_title" 
 	    android:icon="@drawable/ic_more"
-	    android:framgment="com.android.settings.merk.interfacesettings.MoreInterfaceSettings"/>
+	    android:fragment="com.android.settings.merk.interfacesettings.MoreInterfaceSettings"/>
 </PreferenceScreen>
