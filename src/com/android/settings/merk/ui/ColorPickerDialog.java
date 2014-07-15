@@ -44,8 +44,8 @@ import android.widget.TextView;
 
 import com.android.settings.R;
 import com.android.settings.merk.ui.ColorPanelView;
-import org.android.settings.merk.ui.ColorPickerView;
-import org.android.settings.merk.ui.ColorPickerView.OnColorChangedListener;
+import com.android.settings.merk.ui.ColorPickerView;
+import com.android.settings.merk.ui.ColorPickerView.OnColorChangedListener;
 
 import java.util.ArrayList;
 import java.util.IllegalFormatException;

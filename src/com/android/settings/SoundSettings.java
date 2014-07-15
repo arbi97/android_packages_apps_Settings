@@ -53,9 +53,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import org.omnirom.omnigears.chameleonos.SeekBarPreference;
-import org.omnirom.omnigears.preference.AppSelectListPreference;
-import org.omnirom.omnigears.preference.SystemCheckBoxPreference;
+import com.android.settings.merk.chameleonos.SeekBarPreference;
+import com.android.settings.merk.preference.AppSelectListPreference;
+import com.android.settings.merk.preference.SystemCheckBoxPreference;
 
 public class SoundSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {

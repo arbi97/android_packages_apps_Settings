@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.omnirom.omnigears.brightness;
+package com.android.settings.merk.brightness;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -56,7 +56,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import org.omnirom.omnigears.R;
+import com.android.settings.merk.R;
 
 public class AutoBrightnessDialog extends AlertDialog
         implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener {

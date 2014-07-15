@@ -52,7 +52,7 @@ import com.android.internal.util.slim.QuietHoursHelper;
 import com.android.settings.R;
 import com.android.settings.slim.service.QuietHoursController;
 import com.android.settings.SettingsPreferenceFragment;
-import org.omnirom.omnigears.preference.SystemCheckBoxPreference;
+import com.android.settings.merk.preference.SystemCheckBoxPreference;
 
 public class QuietHours extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener  {
