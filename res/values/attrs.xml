@@ -83,4 +83,17 @@
     </declare-styleable>
 
     <attr name="apnPreferenceStyle" format="reference" />
+
+    <declare-styleable name="SeekBarPreference">
+        <attr name="min" format="integer" />
+        <attr name="interval" format="integer" />
+        <attr name="unitsLeft" format="string|reference" />
+        <attr name="unitsRight" format="string|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AppSelectListPreference">
+        <attr name="neutralButtonText" format="string|reference" />
+        <attr name="neutralButtonValue" format="string|reference" />
+        <attr name="positiveButtonValue" format="string|reference" />
+    </declare-styleable>
 </resources>

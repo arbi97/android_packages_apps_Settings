@@ -58,50 +58,15 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- INTERFACE -->
-    <header android:id="@+id/interface_section"
-        android:title="@string/header_category_interface" />
-        
-         <header
- android:id="@+id/interface_bars"
- android:title="@string/interface_bars_title"
- android:breadCrumbTitle="@string/interface_bars_title"
- android:fragment="org.omnirom.omnigears.interfacesettings.BarsSettings"
- android:icon="@drawable/ic_bars" />
+    <!-- MerkBox Settings -->
+    <header android:title="@string/header_category_rom_settings" />
 
- <header
- android:id="@+id/interface_menus"
- android:title="@string/interface_menus_title"
- android:breadCrumbTitle="@string/interface_menus_title"
- android:fragment="org.omnirom.omnigears.interfacesettings.MenusSettings"
- android:icon="@drawable/ic_menus" />
-
- <header
- android:id="@+id/interface_notification_panel"
- android:title="@string/interface_notification_panel_title"
- android:breadCrumbTitle="@string/interface_notification_panel_title"
- android:fragment="org.omnirom.omnigears.interfacesettings.NotificationPanelSettings"
- android:icon="@drawable/ic_notifications" />
-
- <header
- android:id="@+id/active_display"
- android:title="@string/active_display_settings"
- android:breadCrumbTitle="@string/active_display_settings"
- android:fragment="org.omnirom.omnigears.chameleonos.ActiveDisplaySettings"
- android:icon="@drawable/ic_settings_actived" />
-
- <header
- android:id="@+id/interface_more"
- android:title="@string/interface_more_title"
- android:breadCrumbTitle="@string/interface_more_title"
- android:fragment="org.omnirom.omnigears.interfacesettings.MoreInterfaceSettings"
- android:icon="@drawable/empty_icon" />
-
-<header
- android:key="lcd_density_setup"
- android:fragment="com.android.settings.spirit.DensityChanger"
- android:title="@string/lcd_density_title"
- android:summary="@string/lcd_density_summary" /> 
+    <!-- System -->
+     <header
+	 android:id="@id/system_settings"
+	 android:fragment="com.android.settings.merk.SystemSettings"
+	 android:title="@string/system_settings_title"
+	 android:icon="@drawable/ic_settings_merkbox" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"

@@ -70,7 +70,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-
+    <uses-permission android:name="android.permission.SYSTEM_NOTIFICATION_LISTENER" />
     <permission
 	android:name="android.permission.REQUEST_SUPERUSER"
 	android:protectionLevel="signature" />
@@ -183,6 +183,58 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+	<!-- MerkBox -->
+	<activity android:name="Settings$SystemSettings"
+		android:label="@string/system_settings_title"
+		android:taskAffinity=""
+		android:excludeFromRecents="true">
+	    <intent-filter>
+		<action android:name="android.intent.action.Main" />
+		<category android:name="android.intent.category.DEFAULT" />
+	    </intent-filter>
+	    <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+		android:value="com.android.settings.merk.SystemSettings" />
+	</activity>
+
+	<activity android:name=".merk.ButtonSettings" />
+	<activity android:name=".merk.batterylight.BatteryLightDialog" />
+	<activity android:name=".merk.batterylight.BatteryLightPreference" />
+	<activity android:name=".merk.batterylight.BatteryLightSettings" />
+	<activity android:name=".merk.brightness.AutoBrightnessDialog" />
+	<activity android:name=".merk.brightness.BrightnessSettings" />
+	<activity android:name=".merk.brightness.ButtonBrightnessSettings" />
+	<activity android:name=".merk.chameleonos.ActiveDisplaySettings" />
+	<activity android:name=".merk.chameleonos.AppMultiSelectListPreference" />
+	<activity android:name=".merk.chameleonos.SeekBarPreference" />
+	<activity android:name=".merk.interfacesettings.BarsSettings" />
+	<activity android:name=".merk.interfacesettings.IconPicker" />
+	<activity android:name=".merk.interfacesettings.LockscreenSettings" />
+	<activity android:name=".merk.interfacesettings.LockscreenTargets" />
+	<activity android:name=".merk.interfacesettings.MenuSettings" />
+	<activity android:name=".merk.interfacesettings.MoreInterfaceSettings" />
+	<activity android:name=".merk.interfacesettings.NavBar" />
+	<activity android:name=".merk.interfacesettings.NavBarDimen" />
+	<activity android:name=".merk.interfacesettings.NavRing" />
+	<activity android:name=".merk.interfacesettings.NotificationPanelSettings" />
+	<activity android:name=".merk.interfacesettings.ShortcutPickHelper" />
+	<activity android:name=".merk.notificationlight.ApplicationLightPreference" />
+	<activity android:name=".merk.notificationlight.LightSettingsDialog" />
+	<activity android:name=".merk.notificationlight.LightSettingsDialog" />
+	<activity android:name=".merk.notificationlight.NotificationLightSettings" />
+	<activity android:name=".merk.preference.AppSelectListPrefence" />
+	<activity android:name=".merk.preference.ColorPickerPreference" />
+	<activity android:name=".merk.preference.GlobalCheckBoxPreference" />
+	<activity android:name=".merk.preference.NumberPickerPreference" />
+	<activity android:name=".merk.preference.SecureCheckBoxPreference" />
+	<activity android:name=".merk.preference.SystemCheckBoxPreference" />
+	<activity android:name=".merk.slim.StatusBarClockStyle" />
+	<activity android:name=".merk.sounds.SoundPackageSettings" />
+	<activity android:name=".merk.ui.AlphaPatternDrawable" />
+	<activity android:name=".merk.ui.ColorPanelView" />
+	<activity android:name=".merk.ui.ColorPickerDialog" />
+	<activity android:name=".merk.ui.ColorPickerView" />
+	<activity android:name=".merk.ui.VolumeRotationDialog" />
 
         <!-- QuietHours  -->
         <receiver android:name=".slim.service.QuietHoursController$NotificationIntentReceiver" />

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 The MerkMod Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/system_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="bars_settings"
+        android:fragment="com.android.settings.merk.interfacesettings.BarsSettings"
+        android:icon="@drawable/ic_settings_status_bar"
+        android:title="@string/interface_bars_title" />
+
+   <PreferenceScreen
+        android:key="menu_settings"
+        android:fragment="com.android.settings.merk.interfacesettings.MenuSettings"
+        android:icon="@drawable/ic_settings_quick_settings"
+        android:title="@string/interace_menus_title" />
+
+    <PreferenceScreen
+        android:key="notification_panel"
+	android:fragment="com.android.settings.merk.interfacesettings.NotificationPanelSettings"
+        android:icon="@drawable/ic_settings_ribbons"
+        android:title="@string/interface_notification_panel_title" />
+
+    <PreferenceScreen
+        android:key="active_display_settings"
+        android:title="@string/ad_settings_title"
+        android:icon="@drawable/ic_settings_power_menu"
+        android:fragment="com.android.settings.merk.chameleonos.ActiveDisplaySettinngs" />
+
+    <PreferenceCategory
+            android:key="more_interface_settings"
+            android:title="@string/interface_more_title" 
+	    android:icon="@drawable/ic_setting_lockscreen"
+	    android:framgment="com.android.merk.interfacesettings.MoreInterfaceSettings"/>
+
+</PreferenceScreen>
