@@ -395,7 +395,7 @@
     <string name="header_category_rom_settings">Roms Extras</string>
 
      <!-- System -->
-    <string name="system_settings_title">MerkBox Settings</string>
+    <string name="system_settings">MerkBox Settings</string>
 
      <!-- StatusBar -->
     <string name="ok">OK</string>

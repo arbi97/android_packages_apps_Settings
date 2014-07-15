@@ -186,7 +186,7 @@
 
 	<!-- MerkBox -->
 	<activity android:name="Settings$SystemSettings"
-		android:label="@string/system_settings_title"
+		android:label="@string/system_settings"
 		android:taskAffinity=""
 		android:excludeFromRecents="true">
 	    <intent-filter>
