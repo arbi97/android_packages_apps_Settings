@@ -197,7 +197,7 @@
 	    <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
 		android:value="com.android.settings.merk.SystemSettings" />
 	    <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-		android:resource="@id/merk_box_settings" />
+		android:resource="@id/system_settings" />
 	</activity>
 
 	<activity android:name=".merk.ButtonSettings" />
