@@ -37,11 +37,6 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
 
-import com.android.settings.merk.interfacesettings.BarSettings;
-import com.android.settings.merk.interfacesettings.MenuSettings;
-import com.android.settings.merk.interfacesettings.NotificationPanelSettings;
-import com.android.settings.merk.chameleonos.ActiveDisplaySettings;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -194,5 +189,9 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         } catch (NameNotFoundException e) {
             return false;
         }
+    }
+     @Override
+    public void onResume() {
+	super.onResume();
     }
 }
