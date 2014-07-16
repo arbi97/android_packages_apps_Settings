@@ -58,6 +58,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.merk.preference.SystemCheckBoxPreference;
