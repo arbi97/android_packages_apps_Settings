@@ -104,8 +104,8 @@
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
 
-    <string name="interface_bars_title">Bars</string>
-    <string name="interface_menus_title">Menus</string>
+    <string name="interface_bars_title">Interface</string>
+    <string name="interface_menus_title">Power menu</string>
     <string name="interface_notification_panel_title">Notification drawer</string>
 
     <!-- Battery Icon selection -->
