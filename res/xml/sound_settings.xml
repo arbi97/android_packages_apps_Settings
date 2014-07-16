@@ -43,7 +43,7 @@
             android:entries="@array/volume_panel_style_entries"
             android:entryValues="@array/volume_panel_style_values" />
 
-    <org.omnirom.omnigears.chameleonos.SeekBarPreference
+    <com.android.settings.merk.chameleonos.SeekBarPreference
             android:key="volume_panel_timeout"
             android:title="@string/volume_panel_timeout_title"
             android:summary="@string/volume_panel_timeout_summary"
@@ -111,7 +111,7 @@
 
     <PreferenceScreen
             android:key="sound_packages"
-            android:fragment="org.omnirom.omnigears.sounds.SoundPackageSettings"
+            android:fragment="com.android.settings.merk.sounds.SoundPackageSettings"
             android:title="@string/sound_packages_title" />
 
     <CheckBoxPreference
@@ -172,7 +172,7 @@
     android:key="headset_category"
     android:title="@string/headset_settings">
     
-    <org.omnirom.omnigears.preference.AppSelectListPreference
+    <com.android.settings.merk.preference.AppSelectListPreference
         android:key="headset_plug"
         android:title="@string/headset_plug_enable_title"
         android:positiveButtonText="@string/headset_plug_positive_title"
@@ -180,7 +180,7 @@
         settings:neutralButtonValue="SYSTEM_DEFAULT"
         android:persistent="false" />
     
-    <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+    <com.android.settings.merk.preference.SystemCheckBoxPreference
         android:key="headset_plug_music_active"
         android:title="@string/headset_plug_music_active_title"
         android:summary="@string/headset_plug_music_active_summary"
@@ -200,7 +200,7 @@
         android:entryValues="@array/headset_plug_actions_values"
         android:persistent="false" />
 
-    <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+    <com.android.settings.merk.preference.SystemCheckBoxPreference
         android:key="headset_plug_force_actions"
         android:title="@string/headset_plug_force_actions_title"
         android:summary="@string/headset_plug_force_actions_summary"

@@ -391,10 +391,10 @@
     <string name="headset_plug_force_actions_summary">Run remove action also if shortcut was already running</string>
 
      <!--MerkBox settings -->
-    <string name="header_category_rom_settings">Roms Extras</string>
+    <string name="header_category_rom_settings">Rom Extras</string>
 
      <!-- System -->
-    <string name="system_settings">MerkBox Settings</string>
+    <string name="system_settings">MerkBox</string>
 
      <!-- StatusBar -->
     <string name="ok">OK</string>
