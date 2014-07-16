@@ -24,7 +24,7 @@
         android:summaryOff="@string/ad_enable_summary_off"
         android:summaryOn="@string/ad_enable_summary_on" />
 
-    <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+    <com.android.settings.merk.preference.SystemCheckBoxPreference
         android:key="active_display_content"
         android:defaultValue="true"
         android:title="@string/ad_content_title"
