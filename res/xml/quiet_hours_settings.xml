@@ -68,28 +68,28 @@
             android:entryValues="@array/quiet_hours_ringer_values"
             android:persistent="false" />
 
-        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+        <com.android.settings.merk.preference.SystemCheckBoxPreference
             android:key="quiet_hours_mute"
             android:title="@string/quiet_hours_mute"
             android:summaryOn="@string/quiet_hours_mute_on"
             android:summaryOff="@string/quiet_hours_mute_off"
             android:dependency="quiet_hours_enabled" />
 
-        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+        <com.android.settings.merk.preference.SystemCheckBoxPreference
             android:key="quiet_hours_haptic"
             android:title="@string/quiet_hours_haptic"
             android:summaryOn="@string/quiet_hours_haptic_on"
             android:summaryOff="@string/quiet_hours_haptic_off"
             android:dependency="quiet_hours_enabled" />
 
-        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+        <com.android.settings.merk.preference.SystemCheckBoxPreference
             android:key="quiet_hours_still"
             android:title="@string/quiet_hours_still"
             android:summaryOn="@string/quiet_hours_still_on"
             android:summaryOff="@string/quiet_hours_still_off"
             android:dependency="quiet_hours_enabled" />
 
-        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+        <com.android.settings.merk.preference.SystemCheckBoxPreference
             android:key="quiet_hours_dim"
             android:title="@string/quiet_hours_dim"
             android:summaryOn="@string/quiet_hours_dim_on"
@@ -186,7 +186,7 @@
             android:dependency="quiet_hours_enabled"
             android:persistent="false" />
 
-        <org.omnirom.omnigears.preference.SystemCheckBoxPreference
+        <com.android.settings.merk.preference.SystemCheckBoxPreference
             android:key="quiet_hours_alarm_loop"
             android:title="@string/quiet_hours_bypass_ringtone_loop_title"
             android:dependency="quiet_hours_enabled"
