@@ -27,7 +27,7 @@ limitations under the License.
 
    <PreferenceScreen
         android:key="menu_settings"
-        android:fragment="com.android.settings.merk.interfacesettings.MenuSettings"
+        android:fragment="com.android.settings.merk.interfacesettings.MenusSettings"
         android:icon="@drawable/ic_menus"
         android:title="@string/interface_menus_title" />
 
