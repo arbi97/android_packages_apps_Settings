@@ -25,11 +25,11 @@ limitations under the License.
         android:icon="@drawable/ic_bars"
         android:title="@string/interface_bars_title" />
 
-   <PreferenceScreen
-        android:key="menu_settings"
-        android:fragment="com.android.settings.merk.interfacesettings.MenusSettings"
-        android:icon="@drawable/ic_menus"
-        android:title="@string/interface_menus_title" />
+    <PreferenceScreen
+	android:key="lockscreen_link"
+	android:title="@string/lockscreen_settings_title"
+	android:icon="@drawable/ic_lockscreen"
+	android:fragment="com.android.settings.merk.interfacesettings.LockscreenSettings" />
 
     <PreferenceScreen
         android:key="notification_panel"
