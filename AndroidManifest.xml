@@ -1777,7 +1777,7 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.omnigears.sounds.SoundPackageSettings" />
+                android:value="com.android.settings.merk.sounds.SoundPackageSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/sound_settings" />
             <meta-data android:name="com.android.settings.PARENT_FRAGMENT_CLASS"

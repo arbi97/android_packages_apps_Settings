@@ -18,7 +18,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-    <org.omnirom.omnigears.ui.ColorPickerView
+    <com.android.settings.merk.ui.ColorPickerView
         android:id="@+id/color_picker_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:digits="0123456789ABCDEFabcdef"
             android:inputType="textNoSuggestions"
             android:maxLength="6" />
-        <org.omnirom.omnigears.ui.ColorPanelView
+        <com.android.settings.merk.ui.ColorPanelView
             android:id="@+id/color_panel"
             android:layout_width="0px"
             android:layout_height="match_parent"
