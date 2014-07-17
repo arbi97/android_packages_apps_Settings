@@ -47,6 +47,15 @@
     <PreferenceCategory
             android:key="category_background"
             android:title="@string/category_background_title"/>
+
+            <Preference
+                    android:key="lockscreen_custom_wallpaper"
+                    android:title="@string/lockscreen_wallpaper"
+                    android:persistent="false">
+                    <intent
+                            android:targetPackage="com.android.wallpapercropper"
+                            android:targetClass="com.android.wallpapercropper.LockscreenWallpaper"/>
+            </Preference>
 	   
            <Preference
           	   android:fragment="com.android.settings.merk.interfacesettings.LockscreenTargets"
