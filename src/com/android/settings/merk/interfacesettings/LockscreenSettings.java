@@ -54,7 +54,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_MAXIMIZE_WIDGETS = "maximize_widgets";
     private static final String KEY_ENABLE_CAMERA = "enable_camera";
-    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
+    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring"
     private static final String KEY_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private CheckBoxPreference mMaximizeWidgets;
