@@ -301,10 +301,6 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- ADB Paranoia settings -->
-    <string name="adb_paranoid">ADB paranoia mode</string>
-    <string name="adb_paranoid_summary">Immediately reboot if an unknown computer is connected while device is locked</string>
-
     <string name="unit_sec">sec</string>
 
     <!-- custom data usage period -->
@@ -949,3 +945,4 @@
    <string name="category_immersive_mode_title">Immersive mode</string>
    <string name="lockscreen_immersive_mode_title">Disable immersive mode</string>
 </resources>
+
