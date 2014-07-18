@@ -51,6 +51,7 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
         mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
             Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
         mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
+    }
 
     @Override 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
