@@ -18,37 +18,26 @@
 
 package com.android.settings.merk.interfacesettings;
 
-import android.app.Activity;
+import com.android.settings.SettingsPreferencefragment;
+import com.android.settings.R;
 import android.content.ContentResolver;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+import android.content.Context;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
-
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.quicklaunch.BookmarkPicker;
-
-import java.net.URISyntaxException;
-
-import com.android.settings.merk.preference.AppSelectListPreference;
 
 public class NotificationPanelSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "NotificationPanelSettings";
 
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
-    private static final String CLOCK_SHORTCUT = "clock_shortcut";
-    private static final String CALENDAR_SHORTCUT = "calendar_shortcut";
 
     private CheckBoxPreference mStatusBarCustomHeader;
-    private AppSelectListPreference mClockShortcut;
-    private AppSelectListPreference mCalendarShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,11 +54,6 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
 
         mClockShortcut = (AppSelectListPreference)prefSet.findPreference(CLOCK_SHORTCUT);
         mClockShortcut.setOnPreferenceChangeListener(this);
-
-        mCalendarShortcut = (AppSelectListPreference)prefSet.findPreference(CALENDAR_SHORTCUT);
-        mCalendarShortcut.setOnPreferenceChangeListener(this);
-
-        updateClockCalendarSummary();
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -78,63 +62,9 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
-        } else if (preference == mClockShortcut) {
-            String value = (String) objValue;
-            // a value of null means to use the default
-            Settings.System.putString(resolver, Settings.System.CLOCK_SHORTCUT, value);
-            updateClockCalendarSummary();
-        } else if (preference == mCalendarShortcut) {
-            String value = (String) objValue;
-            // a value of null means to use the default
-            Settings.System.putString(resolver, Settings.System.CALENDAR_SHORTCUT, value);
-            updateClockCalendarSummary();
         } else {
             return false;
         }
         return true;
     }
-
-    private void updateClockCalendarSummary() {
-        final PackageManager packageManager = getPackageManager();
-
-        mClockShortcut.setSummary(getResources().getString(R.string.default_shortcut));
-        mCalendarShortcut.setSummary(getResources().getString(R.string.default_shortcut));
-
-        String clockShortcutIntentUri = Settings.System.getString(getContentResolver(), Settings.System.CLOCK_SHORTCUT);
-        if (clockShortcutIntentUri != null) {
-            Intent clockShortcutIntent = null;
-            try {
-                clockShortcutIntent = Intent.parseUri(clockShortcutIntentUri, 0);
-            } catch (URISyntaxException e) {
-                clockShortcutIntent = null;
-            }
-
-            if(clockShortcutIntent != null) {
-                ResolveInfo info = packageManager.resolveActivity(clockShortcutIntent, 0);
-                if (info != null) {
-                    mClockShortcut.setSummary(info.loadLabel(packageManager));
-                }
-            }
-        }
-
-        String calendarShortcutIntentUri = Settings.System.getString(getContentResolver(), Settings.System.CALENDAR_SHORTCUT);
-        if (calendarShortcutIntentUri != null) {
-            Intent calendarShortcutIntent = null;
-            try {
-                calendarShortcutIntent = Intent.parseUri(calendarShortcutIntentUri, 0);
-            } catch (URISyntaxException e) {
-                calendarShortcutIntent = null;
-            }
-
-            if(calendarShortcutIntent != null) {
-                ResolveInfo info = packageManager.resolveActivity(calendarShortcutIntent, 0);
-                if (info != null) {
-                    mCalendarShortcut.setSummary(info.loadLabel(packageManager));
-                }
-            }
-        }
-    }
 }
-
-}
-

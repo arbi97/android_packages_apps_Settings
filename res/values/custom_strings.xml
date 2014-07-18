@@ -914,12 +914,6 @@
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>
 
-    <!-- Notification Panel Shortcuts -->
-    <string name="notification_bar_shortcuts">Header shortcuts</string>
-    <string name="clock_shortcut_title">Time</string>
-    <string name="calendar_shortcut_title">Date</string>
-    <string name="default_shortcut">Default</string>
-
     <string name="color_picker_dialog_title">Color</string>
 
     <!-- Swap volume buttons when the screen is rotated -->
