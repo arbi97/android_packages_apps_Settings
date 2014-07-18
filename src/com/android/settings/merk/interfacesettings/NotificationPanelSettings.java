@@ -18,7 +18,7 @@
 
 package com.android.settings.merk.interfacesettings;
 
-import com.android.settings.SettingsPreferencefragment;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import android.content.ContentResolver;
 import android.content.Context;
