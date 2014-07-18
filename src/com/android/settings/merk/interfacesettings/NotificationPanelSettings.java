@@ -52,8 +52,9 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
             Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
         mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
 
-        mClockShortcut = (AppSelectListPreference)prefSet.findPreference(CLOCK_SHORTCUT);
-        mClockShortcut.setOnPreferenceChangeListener(this);
+    @Override 
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+	return true;
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
