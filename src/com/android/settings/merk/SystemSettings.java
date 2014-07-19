@@ -84,7 +84,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements
             mRecentsMemoryIndicatorPosition.setValue(recentsMemoryIndicatorPosition);
         }
         mRecentsMemoryIndicatorPosition.setOnPreferenceChangeListener(this);
-        }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+	return true;
     }
 
     @Override
