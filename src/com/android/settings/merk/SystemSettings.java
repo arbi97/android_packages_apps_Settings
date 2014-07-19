@@ -116,8 +116,4 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         return true;
     }
-     @Override
-    public void onResume() {
-	super.onResume();
-    }
-}
+} 
