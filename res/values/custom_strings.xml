@@ -82,6 +82,12 @@
     <string name="appops_sysapp_beware">Beware!</string>
     <string name="appops_sysapp_warning">"Changing permissions of core Android components might lead to undesired behavior. Change settings here at your own risk!</string>
 
+    <!-- OTS -->
+    <string name="personalization">Personalization</string>
+    <string name="reset_user_preferences_title">Reset preferences</string>
+    <string name="reset_user_preferences_summary">Restores user interface preferences to default values</string>
+    <string name="reset_user_preferences_dialog">Are you sure you want to reset your preferences?</string>
+
     <!-- Low battery warning policy -->
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Indicate low battery warning with</string>
@@ -795,10 +801,6 @@
     <string name="qs_configurable_title">Quick settings configurable</string>
     <string name="qs_configurable_summary">Enable/disable dynamic row changes</string>
 
-    <!-- Status Bar QS Quick pulldown -->
-    <string name="qs_quick_pulldown_title">Quick Settings pulldown</string>
-    <string name="qs_quick_pulldown_summary">Access The quick settings from the Right side of the status bar</string>
- 
     <!-- Cursor control -->
     <string name="volume_key_cursor_control_title">Cursor control</string>
     <string name="volume_key_cursor_control_on">Left/right</string>

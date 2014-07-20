@@ -82,6 +82,12 @@
     <string name="appops_sysapp_beware">¡Precaución!</string>
     <string name="appops_sysapp_warning">"Cambiar permisos en los servicios de Android puede provocar efectos indeseados. ¡Cámbielos bajo su propio riesgo!</string>
 
+    <!-- OTS -->
+    <string name="personalization">Personalización</string>
+    <string name="reset_user_preferences_title">Restablecer configuración</string>
+    <string name="reset_user_preferences_summary">Restaura las preferencias de interfaz de usuario a los valores predeterminados</string>
+    <string name="reset_user_preferences_dialog">¿Seguro que deseas restablecer todas tus preferencias?</string>
+
     <!-- Low battery warning policy -->
     <string name="pref_low_battery_warning_policy_title">Aviso de batería baja</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Indicar la batería baja con</string>
