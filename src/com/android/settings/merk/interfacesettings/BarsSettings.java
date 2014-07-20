@@ -103,7 +103,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1);
         mStatusBarNotifCount.setOnPreferenceChangeListener(this);
 
-	mStatusBarQsPulldown = (CheckBoxPreference) prefset.findPreference(STATUS_BAR_QS_QUICK_PULLDOWN);
+	mStatusBarQsPulldown = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_QS_QUICK_PULLDOWN);
 	mStatusBarQsPulldown.setChecked(Settings.System.getInt(resolver,
 	Settings.System.STATUS_BAR_QS_QUICK_PULLDOWN, 0) == 1);
 	mStatusBarQsPulldown.setOnPreferenceChangeListener(this);
