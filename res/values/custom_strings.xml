@@ -795,14 +795,10 @@
     <string name="qs_configurable_title">Quick settings configurable</string>
     <string name="qs_configurable_summary">Enable/disable dynamic row changes</string>
 
-    <!-- QuickSettings: Quick Pulldown -->
-    <string name="title_quick_pulldown">Quick pulldown</string>
-    <string name="summary_quick_pulldown">Quickly pulldown quick settings with one finger</string>
-    <string name="quick_pulldown_off">Disabled</string>
-    <string name="quick_pulldown_centre">Centre</string>
-    <string name="quick_pulldown_left">Left</string>
-    <string name="quick_pulldown_right">Right</string>
-
+    <!-- Status Bar QS Quick pulldown -->
+    <string name="qs_quick_pulldown_title">Quick Settings pulldown</string>
+    <string name="qs_quick_pulldown_summary">Access The quick settings from the Right side of the status bar</string>
+ 
     <!-- Cursor control -->
     <string name="volume_key_cursor_control_title">Cursor control</string>
     <string name="volume_key_cursor_control_on">Left/right</string>

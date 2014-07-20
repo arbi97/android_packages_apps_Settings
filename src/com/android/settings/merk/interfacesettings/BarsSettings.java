@@ -30,7 +30,6 @@ import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
@@ -46,7 +45,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String STATUS_BAR_QS_QUICK_PULLDOWN = "status_bar_qs_quick_pulldown";
     private static final String QUICKSETTINGS_DYNAMIC = "quicksettings_dynamic_row";
     private static final String CATEGORY_NAVBAR = "category_navigation_bar";
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
@@ -59,7 +58,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mStatusBarBrightnessControl;
     private CheckBoxPreference mStatusBarNotifCount;
     private CheckBoxPreference mQuickSettingsDynamic;
-    private ListPreference mQuickPulldown;
+    private CheckBoxPreference mStatusBarQsPulldown;
     private ListPreference mNetTrafficState;
     private ListPreference mNetTrafficUnit;
     private ListPreference mNetTrafficPeriod;
@@ -103,14 +102,10 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1);
         mStatusBarNotifCount.setOnPreferenceChangeListener(this);
 
-        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int statusQuickPulldown =
-                 Settings.System.getInt(resolver, Settings.System.QS_QUICK_PULLDOWN,0);
-        mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-
-
-
+	mStatusBarQsPulldown = (CheckBoxPreference) prefset.findPreference(STATUS_BAR_QS_QUICK_PULLDOWN);
+	mStatusBarQsPulldown.setChecked(Settings.System.getInt(resolver,
+	Settings.System.STATUS_BAR_QS_QUICK_PULLDOWN, 0) == 1);
+	mStatusBarQsPulldown.setOnPreferenceChangeListener(this);
 
         mQuickSettingsDynamic = (CheckBoxPreference) prefSet.findPreference(QUICKSETTINGS_DYNAMIC);
         mQuickSettingsDynamic.setChecked(Settings.System.getInt(resolver,
@@ -195,12 +190,10 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                 Settings.System.QUICK_SETTINGS_TILES_ROW, value ? 1 : 0);
-        } else if (preference == mQuickPulldown) {
-            int val = Integer.parseInt((String) objValue);
-            int index = mQuickPulldown.findIndexOfValue((String) objValue);
+        } else if (preference == mStatusBarQsPulldown) {
+            boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
-                Settings.System.QS_QUICK_PULLDOWN, val);
-            mQuickPulldown.setSummary(mQuickPulldown.getEntries()[index]);
+		Settings.System.STATUS_BAR_QS_QUICK_PULLDOWN, value ? 1: 0);
         } else if (preference == mStatusBarNetworkActivity) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NETWORK_ACTIVITY,
