@@ -86,7 +86,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOCK_SOUNDS = "dock_sounds";
     private static final String KEY_DOCK_AUDIO_MEDIA_ENABLED = "dock_audio_media_enabled";
     private static final String KEY_VOLUME_PANEL_STYLE = "volume_panel_style";
-    private static final String KEY_SAFE_HEADSET_VOLUME_WARNING = "safe_headset_volume_warning";
     private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
     private static final String KEY_HEADSET_PLUG = "headset_plug";
     private static final String KEY_HEADSET_MUSIC_ACTIVE = "headset_plug_music_active";
@@ -104,7 +103,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final int MSG_UPDATE_ALARM_SUMMARY = 3;
 
     private ListPreference mVolumePanelStyle;
-    private CheckBoxPreference mVolumeWarning;
     private CheckBoxPreference mVibrateWhenRinging;
     private CheckBoxPreference mDtmfTone;
     private CheckBoxPreference mSoundEffects;
@@ -179,14 +177,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         }
 
         mVolumePanelStyle = (ListPreference) findPreference(KEY_VOLUME_PANEL_STYLE);
-        mVolumeWarning = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_VOLUME_WARNING);
         mVolumePanelTimeout = (SeekBarPreference) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
 
         if (getResources().getBoolean(com.android.internal.R.bool.config_useFixedVolume)) {
             // device with fixed volume policy, do not display volumes submenu
             getPreferenceScreen().removePreference(findPreference(KEY_RING_VOLUME));
             getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_PANEL_STYLE));
-            getPreferenceScreen().removePreference(findPreference(KEY_SAFE_HEADSET_VOLUME_WARNING));
             getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_PANEL_TIMEOUT));
         } else {
             int statusVolumePanelStyle = Settings.System.getInt(resolver,
@@ -194,10 +190,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             mVolumePanelStyle.setValue(String.valueOf(statusVolumePanelStyle));
             mVolumePanelStyle.setSummary(mVolumePanelStyle.getEntry());
             mVolumePanelStyle.setOnPreferenceChangeListener(this);
-
-            mVolumeWarning.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.MANUAL_SAFE_MEDIA_VOLUME, 1) == 1);
-            mVolumeWarning.setOnPreferenceChangeListener(this);
 
             int statusVolumePanelTimeout = Settings.System.getInt(resolver,
                     Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
@@ -443,10 +435,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     Settings.System.MODE_VOLUME_OVERLAY, volumePanelStyle);
             int idx = mVolumePanelStyle.findIndexOfValue((String) objValue);
             mVolumePanelStyle.setSummary(mVolumePanelStyle.getEntries()[idx]);
-        } else if (preference == mVolumeWarning) {
-            int volumeWarning = (Boolean) objValue ? 1 : 0;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.MANUAL_SAFE_MEDIA_VOLUME, volumeWarning);
         } else if (preference == mVolumePanelTimeout) {
             int volumePanelTimeout = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
