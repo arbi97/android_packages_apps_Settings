@@ -4913,8 +4913,10 @@
     <!-- Text to display in regulatory info screen (from device overlay). -->
     <string name="regulatory_info_text"></string>
 
-    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
-    <string name="supersu_title">SuperSU</string>
+<!--Notification category-->
+<string name="notification_category">Notifications</string>
 
- 
+ <!--Notification peek-->
+ <string name="notification_peek_title">Notification peek</string>
+ <string name="notification_peek_summary">Show latest notification after picking up your device</string>
 </resources>
