@@ -75,7 +75,7 @@
 	android:name="android.permission.REQUEST_SUPERUSER"
 	android:protectionLevel="signature" />
     <permission
-	android:name="android.permission.REPORT_SUPERUSER"
+	android:name="android:permission.REPORT_SUPERUSER"
         android:protectionLevel="signature" />
 
     <permission-group
@@ -263,7 +263,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
-
 
         <!-- Wireless Controls -->
 
