@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Copyright (C) 2013 The MerkMod Project
+<!--
+  Copyright (C) 2013 The MerkMod Project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -13,44 +14,36 @@
 
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
- -->
-
+-->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/double_tap_sleep_title">
-
-    <PreferenceCategory
-        android:key="double_tap_sleep_general_category"
-        android:title="@string/system_settings">
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="double_tap_sleep_status_bar"
-            android:title="@string/status_bar_double_tap_sleep_status_bar_title"
-            android:summary="@string/status_bar_double_tap_sleep_status_bar_summary" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="double_tap_sleep_secure_lockscreen_category"
-        android:title="@string/double_tap_sleep_secure_lockscreen_category">
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="double_tap_sleep_glowpad"
-            android:title="@string/status_bar_double_tap_sleep_glowpad_title"
-            android:summary="@string/status_bar_double_tap_sleep_glowpad_summary" />
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="double_tap_sleep_pin_password"
-            android:title="@string/status_bar_double_tap_sleep_pin_password_title"
-            android:summary="@string/status_bar_double_tap_sleep_pin_password_summary" />
-
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="double_tap_sleep_pattern"
-            android:title="@string/status_bar_double_tap_sleep_pattern_title"
-            android:summary="@string/status_bar_double_tap_sleep_pattern_summary" />
-
-    </PreferenceCategory>
-
+	xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+	android:title="@string/double_tap_sleep_title" >
+	<PreferenceCategory
+		android:key="double_tap_sleep_general_category"
+		android:title="@string/system_settings" >
+		<CheckBoxPreference
+			android:defaultValue="false"
+			android:key="double_tap_sleep_status_bar"
+			android:summary="@string/status_bar_double_tap_sleep_status_bar_summary"
+			android:title="@string/status_bar_double_tap_sleep_status_bar_title" />
+	</PreferenceCategory>
+	<PreferenceCategory
+		android:key="double_tap_sleep_secure_lockscreen_category"
+		android:title="@string/double_tap_sleep_secure_lockscreen_category" >
+		<CheckBoxPreference
+			android:defaultValue="false"
+			android:key="double_tap_sleep_glowpad"
+			android:summary="@string/status_bar_double_tap_sleep_glowpad_summary"
+			android:title="@string/status_bar_double_tap_sleep_glowpad_title" />
+		<CheckBoxPreference
+			android:defaultValue="false"
+			android:key="double_tap_sleep_pin_password"
+			android:summary="@string/status_bar_double_tap_sleep_pin_password_summary"
+			android:title="@string/status_bar_double_tap_sleep_pin_password_title" />
+		<CheckBoxPreference
+			android:defaultValue="false"
+			android:key="double_tap_sleep_pattern"
+			android:summary="@string/status_bar_double_tap_sleep_pattern_summary"
+			android:title="@string/status_bar_double_tap_sleep_pattern_title" />
+	</PreferenceCategory>
 </PreferenceScreen>

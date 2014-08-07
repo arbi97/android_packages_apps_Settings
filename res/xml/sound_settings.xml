@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2008 The Android Open Source Project
+<!--
+     Copyright (C) 2008 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,193 +14,161 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/sound_settings"
-        android:key="sound_settings"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <PreferenceScreen
-        android:key="quiet_hours_settings"
-        android:fragment="com.android.settings.slim.QuietHours"
-        android:title="@string/quiet_hours_title" />
-
-    <com.android.settings.RingerVolumePreference
-            android:key="ring_volume"
-            android:title="@string/all_volume_title"
-            android:dialogTitle="@string/all_volume_title"
-            android:persistent="false"
-            android:streamType="ring" />
-
-    <PreferenceCategory
-            android:key="category_volume_panel"
-            android:title="@string/category_volume_panel_title"/>
-
-    <ListPreference
-            android:key="volume_panel_style"
-            android:title="@string/volume_panel_style"
-            android:persistent="false"
-            android:defaultValue="1"
-            android:entries="@array/volume_panel_style_entries"
-            android:entryValues="@array/volume_panel_style_values" />
-
-    <com.android.settings.merk.chameleonos.SeekBarPreference
-            android:key="volume_panel_timeout"
-            android:title="@string/volume_panel_timeout_title"
-            android:summary="@string/volume_panel_timeout_summary"
-            android:max="10"
-            settings:min="1"
-            settings:unitsLeft=""
-            settings:unitsRight="@string/unit_sec"
-            android:persistent="false" />
-
-    <Preference
-            android:key="musicfx"
-            android:title="@string/musicfx_title">
-        <intent android:targetPackage="com.android.musicfx"
-                android:targetClass="com.android.musicfx.ControlPanelPicker" />
-    </Preference>
-
-    <PreferenceCategory
-            android:key="category_calls_and_notification"
-            android:title="@string/sound_category_call_ringtone_vibrate_title"/>
-
-    <!-- Do not nest these, or removals in code will break -->
-    <com.android.settings.DefaultRingtonePreference
-            android:key="ringtone"
-            android:title="@string/ringtone_title"
-            android:dialogTitle="@string/ringtone_title"
-            android:persistent="false"
-            android:ringtoneType="ringtone" />
-
-    <CheckBoxPreference
-         android:key="vibrate_when_ringing"
-         android:title="@string/vibrate_when_ringing_title"
-         android:persistent="false" />
-
-    <com.android.settings.IncreasingRingPreference
-        android:key="increasing_ring"
-        android:title="@string/increasing_ring_title"
-        android:dialogTitle="@string/increasing_ring_title"
-        android:persistent="false"
-        android:streamType="ring" />
-
-    <PreferenceCategory
-            android:title="@string/sound_category_system_title"/>
-
-    <!-- Do not nest these, or removals in code will break -->
-
-    <com.android.settings.DefaultRingtonePreference
-            android:key="notification_sound"
-            android:title="@string/notification_sound_title"
-            android:dialogTitle="@string/notification_sound_dialog_title"
-            android:persistent="false"
-            android:ringtoneType="notification" />
-
-    <com.android.settings.DefaultRingtonePreference
-            android:key="alarm_sound"
-            android:title="@string/alarm_sound_title"
-            android:dialogTitle="@string/alarm_sound_dialog_title"
-            android:persistent="false"
-            android:ringtoneType="alarm" />
-
-    <PreferenceScreen
-            android:key="sound_packages"
-            android:fragment="com.android.settings.merk.sounds.SoundPackageSettings"
-            android:title="@string/sound_packages_title" />
-
-    <CheckBoxPreference
-            android:key="dtmf_tone"
-            android:title="@string/dtmf_tone_enable_title"
-            android:defaultValue="true" />
-
-    <CheckBoxPreference
-            android:key="sound_effects"
-            android:title="@string/sound_effects_enable_title"
-            android:defaultValue="true" />
-
-    <CheckBoxPreference
-            android:key="lock_sounds"
-            android:title="@string/lock_sounds_enable_title"
-            android:defaultValue="true" />
-
-    <CheckBoxPreference
-            android:key="haptic_feedback"
-            android:title="@string/haptic_feedback_enable_title"
-            android:defaultValue="true" />
-
-    <CheckBoxPreference
-            android:key="volume_adjust_sounds"
-            android:title="@string/volume_adjust_sounds_enable_title"
-            android:summary="@string/volume_adjust_sounds_enable_summary" 
-            android:defaultValue="true" />
-
-    <ListPreference
-            android:key="emergency_tone"
-            android:title="@string/emergency_tone_title"
-            android:entries="@array/emergency_tone_entries"
-            android:entryValues="@array/emergency_tone_values" />
-
-    <!-- Dock -->
-    <PreferenceCategory
-        android:key="dock_category"
-        android:title="@string/dock_settings"/>
-
-    <!-- Do not nest these, or removals in code will break -->
-    <PreferenceScreen
-        android:key="dock_audio"
-        android:title="@string/dock_audio_settings_title">
-        <CheckBoxPreference
-            android:title="@string/bluetooth_dock_settings_a2dp"
-            android:key="dock_audio_media_enabled"
-            android:enabled="true"
-            />
-    </PreferenceScreen>
-
-    <CheckBoxPreference
-        android:key="dock_sounds"
-        android:title="@string/dock_sounds_enable_title"
-        android:defaultValue="false" />
-
-    <!-- Headset -->
-    <PreferenceCategory
-    android:key="headset_category"
-    android:title="@string/headset_settings">
-    
-    <com.android.settings.merk.preference.AppSelectListPreference
-        android:key="headset_plug"
-        android:title="@string/headset_plug_enable_title"
-        android:positiveButtonText="@string/headset_plug_positive_title"
-        settings:neutralButtonText="@string/headset_plug_neutral_title"
-        settings:neutralButtonValue="SYSTEM_DEFAULT"
-        android:persistent="false" />
-    
-    <com.android.settings.merk.preference.SystemCheckBoxPreference
-        android:key="headset_plug_music_active"
-        android:title="@string/headset_plug_music_active_title"
-        android:summary="@string/headset_plug_music_active_summary"
-        android:defaultValue="true" />
-
-    <ListPreference
-        android:key="headset_plug_app_running"
-        android:title="@string/headset_plug_app_running_title"
-        android:entries="@array/headset_plug_app_running_entries"
-        android:entryValues="@array/headset_plug_app_running_values"
-        android:persistent="false" />
-
-    <ListPreference
-        android:key="headset_plug_actions"
-        android:title="@string/headset_plug_actions_title"
-        android:entries="@array/headset_plug_actions_entries"
-        android:entryValues="@array/headset_plug_actions_values"
-        android:persistent="false" />
-
-    <com.android.settings.merk.preference.SystemCheckBoxPreference
-        android:key="headset_plug_force_actions"
-        android:title="@string/headset_plug_force_actions_title"
-        android:summary="@string/headset_plug_force_actions_summary"
-        android:defaultValue="false" />
-
-    </PreferenceCategory>
-
+	xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+	android:key="sound_settings"
+	android:title="@string/sound_settings" >
+	<PreferenceScreen
+		android:fragment="com.android.settings.slim.QuietHours"
+		android:key="quiet_hours_settings"
+		android:title="@string/quiet_hours_title"
+		settings:includeXmlForSearch="@xml/quiet_hours_settings" />
+	<com.android.settings.RingerVolumePreference
+		android:dialogTitle="@string/all_volume_title"
+		android:key="ring_volume"
+		android:persistent="false"
+		android:streamType="ring"
+		android:title="@string/all_volume_title" />
+	<PreferenceCategory
+		android:key="category_volume_panel"
+		android:title="@string/category_volume_panel_title" />
+	<ListPreference
+		android:defaultValue="1"
+		android:entries="@array/volume_panel_style_entries"
+		android:entryValues="@array/volume_panel_style_values"
+		android:key="volume_panel_style"
+		android:persistent="false"
+		android:title="@string/volume_panel_style" />
+	<com.android.settings.merk.chameleonos.SeekBarPreference
+		android:key="volume_panel_timeout"
+		android:max="10"
+		android:persistent="false"
+		android:summary="@string/volume_panel_timeout_summary"
+		android:title="@string/volume_panel_timeout_title"
+		settings:min="1"
+		settings:unitsLeft=""
+		settings:unitsRight="@string/unit_sec" />
+	<Preference
+		android:key="musicfx"
+		android:title="@string/musicfx_title" >
+		<intent
+			android:targetClass="com.android.musicfx.ControlPanelPicker"
+			android:targetPackage="com.android.musicfx" />
+	</Preference>
+	<PreferenceCategory
+		android:key="category_calls_and_notification"
+		android:title="@string/sound_category_call_ringtone_vibrate_title" />
+	<!-- Do not nest these, or removals in code will break -->
+	<com.android.settings.DefaultRingtonePreference
+		android:dialogTitle="@string/ringtone_title"
+		android:key="ringtone"
+		android:persistent="false"
+		android:ringtoneType="ringtone"
+		android:title="@string/ringtone_title" />
+	<CheckBoxPreference
+		android:key="vibrate_when_ringing"
+		android:persistent="false"
+		android:title="@string/vibrate_when_ringing_title" />
+	<com.android.settings.IncreasingRingPreference
+		android:dialogTitle="@string/increasing_ring_title"
+		android:key="increasing_ring"
+		android:persistent="false"
+		android:streamType="ring"
+		android:title="@string/increasing_ring_title" />
+	<PreferenceCategory android:title="@string/sound_category_system_title" />
+	<!-- Do not nest these, or removals in code will break -->
+	<com.android.settings.DefaultRingtonePreference
+		android:dialogTitle="@string/notification_sound_dialog_title"
+		android:key="notification_sound"
+		android:persistent="false"
+		android:ringtoneType="notification"
+		android:title="@string/notification_sound_title" />
+	<com.android.settings.DefaultRingtonePreference
+		android:dialogTitle="@string/alarm_sound_dialog_title"
+		android:key="alarm_sound"
+		android:persistent="false"
+		android:ringtoneType="alarm"
+		android:title="@string/alarm_sound_title" />
+	<PreferenceScreen
+		android:fragment="com.android.settings.merk.sounds.SoundPackageSettings"
+		android:key="sound_packages"
+		android:title="@string/sound_packages_title"
+		settings:includeXmlForSearch="@xml/sound_package_settings" />
+	<CheckBoxPreference
+		android:defaultValue="true"
+		android:key="dtmf_tone"
+		android:title="@string/dtmf_tone_enable_title" />
+	<CheckBoxPreference
+		android:defaultValue="true"
+		android:key="sound_effects"
+		android:title="@string/sound_effects_enable_title" />
+	<CheckBoxPreference
+		android:defaultValue="true"
+		android:key="lock_sounds"
+		android:title="@string/lock_sounds_enable_title" />
+	<CheckBoxPreference
+		android:defaultValue="true"
+		android:key="haptic_feedback"
+		android:title="@string/haptic_feedback_enable_title" />
+	<CheckBoxPreference
+		android:defaultValue="true"
+		android:key="volume_adjust_sounds"
+		android:summary="@string/volume_adjust_sounds_enable_summary"
+		android:title="@string/volume_adjust_sounds_enable_title" />
+	<ListPreference
+		android:entries="@array/emergency_tone_entries"
+		android:entryValues="@array/emergency_tone_values"
+		android:key="emergency_tone"
+		android:title="@string/emergency_tone_title" />
+	<!-- Dock -->
+	<PreferenceCategory
+		android:key="dock_category"
+		android:title="@string/dock_settings" />
+	<!-- Do not nest these, or removals in code will break -->
+	<PreferenceScreen
+		android:key="dock_audio"
+		android:title="@string/dock_audio_settings_title" >
+		<CheckBoxPreference
+			android:enabled="true"
+			android:key="dock_audio_media_enabled"
+			android:title="@string/bluetooth_dock_settings_a2dp" />
+	</PreferenceScreen>
+	<CheckBoxPreference
+		android:defaultValue="false"
+		android:key="dock_sounds"
+		android:title="@string/dock_sounds_enable_title" />
+	<!-- Headset -->
+	<PreferenceCategory
+		android:key="headset_category"
+		android:title="@string/headset_settings" >
+		<com.android.settings.merk.preference.AppSelectListPreference
+			android:key="headset_plug"
+			android:persistent="false"
+			android:positiveButtonText="@string/headset_plug_positive_title"
+			android:title="@string/headset_plug_enable_title"
+			settings:neutralButtonText="@string/headset_plug_neutral_title"
+			settings:neutralButtonValue="SYSTEM_DEFAULT" />
+		<com.android.settings.merk.preference.SystemCheckBoxPreference
+			android:defaultValue="true"
+			android:key="headset_plug_music_active"
+			android:summary="@string/headset_plug_music_active_summary"
+			android:title="@string/headset_plug_music_active_title" />
+		<ListPreference
+			android:entries="@array/headset_plug_app_running_entries"
+			android:entryValues="@array/headset_plug_app_running_values"
+			android:key="headset_plug_app_running"
+			android:persistent="false"
+			android:title="@string/headset_plug_app_running_title" />
+		<ListPreference
+			android:entries="@array/headset_plug_actions_entries"
+			android:entryValues="@array/headset_plug_actions_values"
+			android:key="headset_plug_actions"
+			android:persistent="false"
+			android:title="@string/headset_plug_actions_title" />
+		<com.android.settings.merk.preference.SystemCheckBoxPreference
+			android:defaultValue="false"
+			android:key="headset_plug_force_actions"
+			android:summary="@string/headset_plug_force_actions_summary"
+			android:title="@string/headset_plug_force_actions_title" />
+	</PreferenceCategory>
 </PreferenceScreen>
