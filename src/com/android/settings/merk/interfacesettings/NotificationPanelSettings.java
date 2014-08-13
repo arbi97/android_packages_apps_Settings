@@ -23,7 +23,6 @@ import com.android.settings.R;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
@@ -32,8 +31,6 @@ import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 
-import com.android.settings.merk.preference.SystemSettingSwitchPreference;
-
 public class NotificationPanelSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "NotificationPanelSettings";
@@ -41,7 +38,6 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
 
     private CheckBoxPreference mStatusBarCustomHeader;
-    private SystemSettingSwitchPreference mSwitchPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,9 +46,6 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-	mSwitchPreference = (SystemSettingSwitchPreference)
-		findPreference(Settings.System.HEADS_UP_NOTIFICATION);
 
         mStatusBarCustomHeader = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CUSTOM_HEADER);
         mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
@@ -63,16 +56,6 @@ public class NotificationPanelSettings extends SettingsPreferenceFragment implem
     @Override 
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 	return true;
-    }
-
-    @Override
-    public void onResume() {
-	super.onResume();
-
-	boolean headsUpEnabled = Settings.System.getIntForUser(
-		getActivity().getContentResolver(),
-		Settings.System.HEADS_UP_NOTIFICATION, 0, UserHandle.USER_CURRENT) == 1;
-	mSwitchPreference.setChecked(headsUpEnabled);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
