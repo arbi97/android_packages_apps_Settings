@@ -221,7 +221,6 @@
 	<activity android:name=".merk.interfacesettings.NavBarDimen" />
 	<activity android:name=".merk.interfacesettings.NavRing" />
 	<activity android:name=".merk.interfacesettings.NotificationPanelSettings" />
-	<activity android:name=".merk.headsup.HeadsUpSettings" />
 	<activity android:name=".merk.interfacesettings.ShortcutPickHelper" />
 	<activity android:name=".merk.notificationlight.ApplicationLightPreference" />
 	<activity android:name=".merk.notificationlight.LightSettingsDialog" />
