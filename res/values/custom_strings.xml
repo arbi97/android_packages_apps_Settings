@@ -927,4 +927,17 @@
     <string name="settings_search_action_bar_button">Search</string>
     <string name="settings_search_autocompleteview_hint">Search settings</string>
 
+    <!-- WIfi ap Connected devices -->
+    <string name="wifi_ap_title_general">Wi-Fi Hotspot</string>
+    <string name="wifi_ap_clients_title">Connected devices</string>
+    <string name="wifi_ap_client_ap_disabled">Hotspot is disabled</string>
+    <string name="wifi_ap_client_none_connected">No client is connected</string>
+    <string name="wifi_ap_client_reachable"><xliff:g if="addr">%1$s</xliff:g> - reachable</string>
+    <string name="wifi_ap_client_unreachable"><xliff:g if="addr">%1$s</xliff:g> - unreachable</string>
+
+    <!-- Wifi settings screen, advanced, title of the item to set wifi priority -->
+    <string name="wifi_setting_priority_title">Wi-Fi priority</string>
+    <!-- Wifi settings screen setting summary for setting the Wi-Fi priority -->
+    <string name="wifi_setting_priority_summary">Specify the priority of the Wi-Fi networks</string>
+
 </resources>
