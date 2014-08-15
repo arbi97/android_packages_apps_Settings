@@ -55,6 +55,11 @@
             android:key="keyguard_enable_widgets"
             android:title="@string/security_enable_widgets_title"/>
 
+	<PreferenceScreen
+		android:key="lockscreen_link"
+		android:title="@string/lockscreen_settings_title"
+		android:fragment="com.android.settings.merk.interfacesettings.LockscreenSettings" />
+
         <PreferenceScreen
             android:key="blacklist"
             android:title="@string/blacklist_title"
