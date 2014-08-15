@@ -94,6 +94,7 @@ import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
 import com.android.settings.location.LocationEnabler;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
@@ -688,6 +689,11 @@ public class Settings extends PreferenceActivity
                 // Remove Bluetooth Settings if Bluetooth service is not available.
                 if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
                     target.remove(i);
+		}
+	    } else if (id == R.id.mobile_network_settings) {
+		// Remove mobile newtork setting if the device doesnt have telephony
+		if (Utils.isWifiOnly(this)) {
+		    target.remove(i); 
                 }
             } else if (id == R.id.data_usage_settings) {
                 // Remove data usage when kernel module not enabled
@@ -951,6 +957,7 @@ public class Settings extends PreferenceActivity
 
         private final WifiEnabler mWifiEnabler;
         private final BluetoothEnabler mBluetoothEnabler;
+	private final MobileDataEnabler mMobileDataEnabler;
 	private final LocationEnabler mLocationEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
@@ -971,6 +978,7 @@ public class Settings extends PreferenceActivity
                 return HEADER_TYPE_CATEGORY;
             } else if (header.id == R.id.wifi_settings 
 			|| header.id == R.id.bluetooth_settings
+			|| header.id == R.id.mobile_network_settings
 			|| header.id == R.id.location_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
@@ -1017,6 +1025,7 @@ public class Settings extends PreferenceActivity
             // Switches inflated from their layouts. Must be done before adapter is set in super
             mWifiEnabler = new WifiEnabler(context, new Switch(context));
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
+	    mMobileDataEnabler = new MobileDataEnabler(context, new Switch(context));
 	    mLocationEnabler = new LocationEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
         }
@@ -1089,6 +1098,8 @@ public class Settings extends PreferenceActivity
                         mWifiEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.bluetooth_settings) {
                         mBluetoothEnabler.setSwitch(holder.switch_);
+		    } else if (header.id == R.id.mobile_network_settings) {
+			mMobileDataEnabler.setSwitch(holder.switch_);
 		    } else if (header.id == R.id.location_settings) {
 			mLocationEnabler.setSwitch(holder.switch_);
                     }
@@ -1164,12 +1175,14 @@ public class Settings extends PreferenceActivity
         public void resume() {
             mWifiEnabler.resume();
             mBluetoothEnabler.resume();
+	    mMobileDataEnabler.resume();
 	    mLocationEnabler.resume();
         }
 
         public void pause() {
             mWifiEnabler.pause();
             mBluetoothEnabler.pause();
+	    mMobileDataEnabler.pause();
 	    mLocationEnabler.pause();
         }
     }
