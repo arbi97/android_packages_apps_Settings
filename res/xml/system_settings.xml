@@ -23,24 +23,21 @@ limitations under the License.
 		android:key="bars_settings"
 		android:title="@string/interface_bars_title"
 		settings:includeXmlForSearch="@xml/bars_settings" />
-	<PreferenceScreen
-		android:fragment="com.android.settings.merk.interfacesettings.LockscreenSettings"
-		android:icon="@drawable/ic_lockscreen"
-		android:key="lockscreen_link"
-		android:title="@string/lockscreen_settings_title"
-		settings:includeXmlForSearch="@xml/lockscreen_settings" />
+
 	<PreferenceScreen
 		android:fragment="com.android.settings.merk.interfacesettings.NotificationPanelSettings"
 		android:icon="@drawable/ic_notifications"
 		android:key="notification_panel"
 		android:title="@string/interface_notification_panel_title"
 		settings:includeXmlForSearch="@xml/notification_panel_settings" />
+
 	<PreferenceScreen
 		android:fragment="com.android.settings.merk.chameleonos.ActiveDisplaySettings"
 		android:icon="@drawable/ic_ad"
 		android:key="active_display_settings"
 		android:title="@string/ad_settings_title"
 		settings:includeXmlForSearch="@xml/active_display_settings" />
+
 	<!-- Recents panel -->
 	<PreferenceCategory
 		android:key="category_recent_panel"
