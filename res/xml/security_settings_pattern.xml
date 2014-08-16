@@ -49,7 +49,7 @@
         <PreferenceScreen
             android:key="lockscreen_link"
             android:title="@string/lockscreen_settings_title"
-            android:fragment="org.omnirom.omnigears.interfacesettings.LockscreenSettings" />
+            android:fragment="com.android.settings.merk.interfacesettings.LockscreenSettings" />
 
         <PreferenceScreen
             android:key="blacklist"
