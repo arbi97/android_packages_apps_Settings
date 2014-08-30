@@ -48,6 +48,11 @@
             android:summary="@string/unlock_menu_unlock_summary" 
             android:persistent="false"/>
 
+	<PreferenceScreen
+		android:key="lockscreen_link"
+		android:title="@string/lockscreen_settings_title" 
+		android:fragment="com.android.settings.merk.interfacesettings.LockscreenSettings"/>
+
         <PreferenceScreen
             android:key="blacklist"
             android:title="@string/blacklist_title"
