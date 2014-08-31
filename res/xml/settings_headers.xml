@@ -165,6 +165,13 @@
 		android:icon="@drawable/ic_settings_security"
 		android:title="@string/security_settings_title"
 		settings:includeXmlForSearch="@xml/security_settings" />
+	<!-- Apps Permissions -->
+	<header
+		android:id="@+id/appops_settings"
+		settings=""
+		android:fragment="com.android.settings.applications.AppOpsSummary"
+		android:icon="@drawable/ic_settings_applications"
+		android:title="@string/appops_settings" />
 	<!-- Language -->
 	<header
 		android:id="@+id/language_settings"
