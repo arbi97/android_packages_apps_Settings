@@ -960,4 +960,7 @@
     <string name="noti_reminder_interval_3dot5s">3.5 second</string>
     <string name="noti_reminder_interval_4s">4 seconds</string>
 
+    <!-- Development shortcut -->
+    <string name="development_shortcut_title">Development shortcut</string>
+    <string name="development_shortcut_summary">Enable \'wipe\' and \'force close\' options in notification area and recents app list</string>
 </resources>
