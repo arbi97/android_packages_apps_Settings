@@ -160,7 +160,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             mSoftBackKillApp.setOnPreferenceChangeListener(this);
 
             // Back long press timeout
-            mKillAppLongpressTimeout = (ListPreference) prefSet.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
+            mKillAppLongpressTimeout = (ListPreference) prefSet.findPreference(KILL_APP_LONGPRESS_TIMEOUT);
             int killAppLongpressTimeout = Settings.System.getInt(getContentResolver(),
                     Settings.System.KILL_APP_LONGPRESS_TIMEOUT, 1500);
             mKillAppLongpressTimeout.setValue(String.valueOf(killAppLongpressTimeout));
@@ -172,8 +172,6 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                     Settings.System.EMULATE_HW_MENU_KEY, 0) == 1);
             mEmulateMenuKey.setOnPreferenceChangeListener(this);
         }
-
-        updateKillAppLongpressTimeoutOptions();
     }
 
     @Override
@@ -231,8 +229,12 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                 Settings.System.SOFT_BACK_KILL_APP_ENABLE, value ? 1 : 0);
         } else if (preference == mKillAppLongpressTimeout) {
-            writeKillAppLongpressTimeoutOptions(objValue);
-            return true;
+            int index = mKillAppLongpressTimeout.findIndexOfValue((String) objValue);
+            int killAppLongpressTimeout = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.KILL_APP_LONGPRESS_TIMEOUT,
+                    killAppLongpressTimeout);
+            mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[index]);
         } else if (preference == mEmulateMenuKey) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
