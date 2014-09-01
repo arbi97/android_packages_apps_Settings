@@ -963,4 +963,12 @@
     <!-- Development shortcut -->
     <string name="development_shortcut_title">Development shortcut</string>
     <string name="development_shortcut_summary">Enable \'wipe\' and \'force close\' options in notification area and recents app list</string>
+
+    <!-- Peek pickup timeout -->
+    <string name="peek_pickup_timeout_title">Peek pickup timeout</string>
+    <string name="peek_pickup_10seconds">10 seconds (default)</string>
+    <string name="peek_pickup_30seconds">30 seconds</string>
+    <string name="peek_pickup_45seconds">45 seconds</string>
+    <string name="peek_pickup_60seconds">1 minute</string>
+    <string name="peek_pickup_120seconds">2 minutes</string>
 </resources>

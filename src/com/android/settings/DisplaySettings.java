@@ -36,6 +36,7 @@ import android.net.Uri;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.os.RemoteException;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -69,6 +70,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_PEEK = "notification_peek";
+    private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
 
     private static final String PEEK_APPLICATION = "com.jedga.peek";
 
@@ -81,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private PreferenceScreen mDisplayRotationPreference;
     private CheckBoxPreference mNotificationPeek;
+    private ListPreference mPeekPickupTimeout;
     private WarnedListPreference mFontSizePref;
     private Preference mNotificationLight;
     private Preference mChargingLight;
@@ -88,7 +91,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mLockScreenRotation;
 
     private final Configuration mCurConfig = new Configuration();
-    
+
     private ListPreference mScreenTimeoutPreference;
     private Preference mScreenSaverPreference;
 
@@ -167,6 +170,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_intrusiveNotificationLed) == false) {
             getPreferenceScreen().removePreference(mNotificationLight);
         }
+
+        mPeekPickupTimeout = (ListPreference) getPreferenceScreen().findPreference(KEY_PEEK_PICKUP_TIMEOUT);
+        int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.PEEK_PICKUP_TIMEOUT, 10000, UserHandle.USER_CURRENT);
+        mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
+        mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
+        mPeekPickupTimeout.setOnPreferenceChangeListener(this);
 
         mChargingLight = (Preference) findPreference(KEY_BATTERY_LIGHT);
         if (mChargingLight != null
@@ -452,8 +462,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             updateDisplayRotationPreferenceDescription();
             return true;
         } else if (preference == mNotificationPeek) {
- Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
- mNotificationPeek.isChecked() ? 1 : 0);
+            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
+            mNotificationPeek.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -481,6 +491,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen-off animation setting", e);
             }
+        } else if (preference == mPeekPickupTimeout) {
+            int index = mPeekPickupTimeout.findIndexOfValue((String) objValue);
+            int peekTimeout = Integer.valueOf((String) objValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                Settings.System.PEEK_PICKUP_TIMEOUT,
+                    peekTimeout, UserHandle.USER_CURRENT);
+            mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
+            return true;
         }
 
         return true;
