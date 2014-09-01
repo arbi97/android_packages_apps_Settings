@@ -160,9 +160,11 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             mSoftBackKillApp.setOnPreferenceChangeListener(this);
 
             // Back long press timeout
-            mKillAppLongpressTimeout = addListPreference(KILL_APP_LONGPRESS_TIMEOUT);
-            int killAppLongpressTimeout = Settings.Secure.getInt(getActivity().getContentResolver(),
-                    Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 0);
+            mKillAppLongpressTimeout = (ListPreference) prefSet.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
+            int killAppLongpressTimeout = Settings.System.getInt(getContentResolver(),
+                    Settings.System.KILL_APP_LONGPRESS_TIMEOUT, 1500);
+            mKillAppLongpressTimeout.setValue(String.valueOf(killAppLongpressTimeout));
+            mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntry());
             mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
 
             mEmulateMenuKey = (CheckBoxPreference) prefSet.findPreference(EMULATE_MENU_KEY);
@@ -259,24 +261,5 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     private boolean getBit(int intNumber, int intMask) {
         return (intNumber & intMask) == intMask;
-    }
-
-    private void updateKillAppLongpressTimeoutOptions() {
-        String value = Settings.Secure.getString(getActivity().getContentResolver(),
-                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT);
-        if (value == null) {
-            value = "";
-        }
-
-        CharSequence[] values = mKillAppLongpressTimeout.getEntryValues();
-        for (int i = 0; i < values.length; i++) {
-            if (value.contentEquals(values[i])) {
-                mKillAppLongpressTimeout.setValueIndex(i);
-                mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[i]);
-                return;
-            }
-        }
-        mKillAppLongpressTimeout.setValueIndex(0);
-        mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[0]);
     }
 }
