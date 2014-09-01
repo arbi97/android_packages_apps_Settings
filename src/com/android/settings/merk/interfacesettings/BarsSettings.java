@@ -27,6 +27,7 @@ import android.content.res.Resources;
 import android.net.TrafficStats;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -161,8 +162,8 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
             // Back long press timeout
             mKillAppLongpressTimeout = (ListPreference) prefSet.findPreference(KILL_APP_LONGPRESS_TIMEOUT);
-            int killAppLongpressTimeout = Settings.System.getInt(getContentResolver(),
-                    Settings.System.KILL_APP_LONGPRESS_TIMEOUT, 1500);
+            int killAppLongpressTimeout = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.KILL_APP_LONGPRESS_TIMEOUT, 1500, UserHandle.USER_CURRENT);
             mKillAppLongpressTimeout.setValue(String.valueOf(killAppLongpressTimeout));
             mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntry());
             mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
@@ -231,9 +232,9 @@ public class BarsSettings extends SettingsPreferenceFragment implements
         } else if (preference == mKillAppLongpressTimeout) {
             int index = mKillAppLongpressTimeout.findIndexOfValue((String) objValue);
             int killAppLongpressTimeout = Integer.valueOf((String) objValue);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putIntForUser(getContentResolver(),
                 Settings.System.KILL_APP_LONGPRESS_TIMEOUT,
-                    killAppLongpressTimeout);
+                    killAppLongpressTimeout, UserHandle.USER_CURRENT);
             mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[index]);
         } else if (preference == mEmulateMenuKey) {
             boolean value = (Boolean) objValue;
