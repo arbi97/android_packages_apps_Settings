@@ -109,6 +109,14 @@
 			android:persistent="false"
 			android:summary="@string/soft_back_kill_app_summary"
 			android:title="@string/soft_back_kill_app_title" />
+                <ListPreference
+                        android:key="kill_app_longpress_timeout"
+                        android:defaultValue="1500"
+                        android:title="@string/kill_app_longpress_timeout_title"
+                        android:persistent="false"
+                        android:entries="@array/kill_app_longpress_timeout_entries"
+                        android:entryValues="@array/kill_app_longpress_timeout_values"
+                        android:dependency="soft_back_kill_app" />
 		<CheckBoxPreference
 			android:key="emulate_menu_key"
 			android:persistent="false"

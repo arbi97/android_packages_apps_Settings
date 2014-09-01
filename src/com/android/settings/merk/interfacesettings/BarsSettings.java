@@ -53,6 +53,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private static final String NETWORK_TRAFFIC_PERIOD = "network_traffic_period";
     private static final String STATUS_BAR_NETWORK_ACTIVITY = "status_bar_network_activity";
     private static final String SOFT_BACK_KILL_APP = "soft_back_kill_app";
+    private static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
     private static final String EMULATE_MENU_KEY = "emulate_menu_key";
 
     private CheckBoxPreference mStatusBarBrightnessControl;
@@ -63,6 +64,7 @@ public class BarsSettings extends SettingsPreferenceFragment implements
     private ListPreference mNetTrafficPeriod;
     private CheckBoxPreference mStatusBarNetworkActivity;
     private CheckBoxPreference mSoftBackKillApp;
+    private ListPreference mKillAppLongpressTimeout;
     private CheckBoxPreference mEmulateMenuKey;
 
     private int mNetTrafficVal;
@@ -157,11 +159,19 @@ public class BarsSettings extends SettingsPreferenceFragment implements
                     Settings.System.SOFT_BACK_KILL_APP_ENABLE, 0) == 1);
             mSoftBackKillApp.setOnPreferenceChangeListener(this);
 
+            // Back long press timeout
+            mKillAppLongpressTimeout = addListPreference(KILL_APP_LONGPRESS_TIMEOUT);
+            int killAppLongpressTimeout = Settings.Secure.getInt(getActivity().getContentResolver(),
+                    Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT, 0);
+            mKillAppLongpressTimeout.setOnPreferenceChangeListener(this);
+
             mEmulateMenuKey = (CheckBoxPreference) prefSet.findPreference(EMULATE_MENU_KEY);
             mEmulateMenuKey.setChecked(Settings.System.getInt(resolver,
                     Settings.System.EMULATE_HW_MENU_KEY, 0) == 1);
             mEmulateMenuKey.setOnPreferenceChangeListener(this);
         }
+
+        updateKillAppLongpressTimeoutOptions();
     }
 
     @Override
@@ -218,6 +228,9 @@ public class BarsSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                 Settings.System.SOFT_BACK_KILL_APP_ENABLE, value ? 1 : 0);
+        } else if (preference == mKillAppLongpressTimeout) {
+            writeKillAppLongpressTimeoutOptions(objValue);
+            return true;
         } else if (preference == mEmulateMenuKey) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
@@ -246,5 +259,24 @@ public class BarsSettings extends SettingsPreferenceFragment implements
 
     private boolean getBit(int intNumber, int intMask) {
         return (intNumber & intMask) == intMask;
+    }
+
+    private void updateKillAppLongpressTimeoutOptions() {
+        String value = Settings.Secure.getString(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_TIMEOUT);
+        if (value == null) {
+            value = "";
+        }
+
+        CharSequence[] values = mKillAppLongpressTimeout.getEntryValues();
+        for (int i = 0; i < values.length; i++) {
+            if (value.contentEquals(values[i])) {
+                mKillAppLongpressTimeout.setValueIndex(i);
+                mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[i]);
+                return;
+            }
+        }
+        mKillAppLongpressTimeout.setValueIndex(0);
+        mKillAppLongpressTimeout.setSummary(mKillAppLongpressTimeout.getEntries()[0]);
     }
 }
