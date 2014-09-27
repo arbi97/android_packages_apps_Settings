@@ -4,7 +4,6 @@
 
     <!-- About phone screen, crDroid version -->
     <string name="crdroid_version_title">crDroid</string>
-    <string name="crdroid_version_default">Неизвестно</string>
 
     <!-- General strings -->
     <string name="attention">Внимание</string>
@@ -17,6 +16,9 @@
 
     <!-- Advanced settings -->
     <string name="advanced_options_settings_title">Расширенные настройки</string>
+
+    <!-- crDroid notifications -->
+    <string name="crdroid_notifications_title">Виды уведомлений</string>
 
     <!-- Halo -->
     <!-- Halo enable/disable -->
@@ -343,18 +345,18 @@
     <string name="screen_recorder_size_600x1024">600x1024</string>
     <string name="screen_recorder_size_720x1280">720x1280</string>
     <!-- frame rates -->
-    <string name="screen_recorder_bitrate_title_100000">100 кБ/с</string>
-    <string name="screen_recorder_bitrate_title_250000">250 кБ/с</string>
-    <string name="screen_recorder_bitrate_title_500000">500 кБ/с</string>
-    <string name="screen_recorder_bitrate_title_1000000">1 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_2000000">2 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_3000000">3 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_4000000">4 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_5000000">5 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_10000000">10 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_20000000">20 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_50000000">50 МБ/с</string>
-    <string name="screen_recorder_bitrate_title_100000000">100 МБ/с</string>
+    <string name="screen_recorder_bitrate_title_100000">100 Кб/с</string>
+    <string name="screen_recorder_bitrate_title_250000">250 Кб/с</string>
+    <string name="screen_recorder_bitrate_title_500000">500 Кб/с</string>
+    <string name="screen_recorder_bitrate_title_1000000">1 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_2000000">2 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_3000000">3 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_4000000">4 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_5000000">5 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_10000000">10 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_20000000">20 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_50000000">50 Мб/с</string>
+    <string name="screen_recorder_bitrate_title_100000000">100 Мб/с</string>
     <string name="screen_recorder_bitrate_100000">100000</string>
     <string name="screen_recorder_bitrate_250000">250000</string>
     <string name="screen_recorder_bitrate_500000">500000</string>
@@ -790,5 +792,59 @@
     <!-- Hover no notif in insecure lockscreen -->
     <string name="hover_exclude_from_insecure_lock_screen_title">Исключить экран блокировки</string>
     <string name="hover_exclude_from_insecure_lock_screen_summary">Не показывать уведомления Hover на незащищенном экране блокировки</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_title">Heads up</string>
+    <string name="heads_up_settings_title">\"Всплывающие уведомления\"</string>
+    <string name="heads_up_master_switch">Heads up master switch</string>
+    <string name="heads_up_expanded_title">Всегда развернуты</string>
+    <string name="heads_up_expanded_summary">Показывать \"Всплывающие уведомления\" всегда развернутыми</string>
+    <string name="heads_up_show_updates_title">Показывать изменения</string>
+    <string name="heads_up_show_updates_summary">Показывать обновившиеся фоновые \"Всплывающие уведомления\"</string>
+    <string name="heads_up_gravity_title">Показывать внизу</string>
+    <string name="heads_up_gravity_summary">Показывать всплывающие уведомления в нижней части экрана</string>
+    <string name="heads_up_snooze_title">Длительность \"отложить\"</string>
+    <string name="heads_up_snooze_summary">При нажатии кнопки \"Отложить\" \"Всплывающие уведомления\" будут приостановлены на <xliff:g id="number">%d</xliff:g> минут.</string>
+    <string name="heads_up_snooze_disabled_summary">Функция \"Отложить\" отключена.</string>
+    <string name="heads_up_snooze_3min">3 минуты</string>
+    <string name="heads_up_snooze_5min">5 минут</string>
+    <string name="heads_up_snooze_10min">10 минут</string>
+    <string name="heads_up_snooze_15min">15 минут</string>
+    <string name="heads_up_snooze_20min">20 минут</string>
+    <string name="heads_up_time_out_title">Длительность</string>
+    <string name="heads_up_time_out_summary">\"Всплывающее уведомление\" будет показываться в течение <xliff:g id="number">%d</xliff:g> секунд.</string>
+    <string name="heads_up_time_out_never_summary">\"Всплывающее уведомление\" будет показываться, пока не будет закрыто.</string>
+    <string name="heads_up_time_out_4sec">4 секунды</string>
+    <string name="heads_up_time_out_6sec">6 секунд</string>
+    <string name="heads_up_time_out_8sec">8 секунд</string>
+    <string name="heads_up_time_out_10sec">10 секунд</string>
+    <string name="heads_up_time_out_never">Никогдаr</string>
+    <string name="heads_up_switch_label">Включить \"Всплывающие уведомления\"</string>
+    <string name="heads_up_note_title">Примечание</string>
+    <string name="heads_up_note_summary">The checkbox above enable Heads Up but you still need to go into Settings -> Apps and pick each application that will receive notifications through Heads Up mode. NOTE: with Heads up globaly disabled CALL UI and MMS will stop receive notifications through it in case you enabled them</string>
+    <string name="heads_up_bg_color_title">Цвет фона</string>
+    <string name="heads_up_text_color_title">Цвет текста</string>
+
+    <!-- Heads-up floating window -->
+    <string name="heads_up_floating_window">Открыть во всплывающем окне</string>
+
+    <!-- Heads-up disable on lockscreen -->
+    <string name="heads_up_exclude_from_lock_screen">Отключить на экране блокировки</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Индикатор сетевого трафика</string>
+    <string name="show_network_traffic_state">Показывать скорость передачи данных</string>
+    <string name="show_network_traffic_unit">Единицы измерения</string>
+    <string name="show_network_traffic_frequency">Частота обновления</string>
+    <string name="show_network_traffic_disable">Отключено</string>
+    <string name="show_network_traffic_up">Исходящий</string>
+    <string name="show_network_traffic_down">Входящий</string>
+    <string name="show_network_traffic_all">Исходящий и входящий</string>
+    <string name="show_network_traffic_bit">Бит в секунду</string>
+    <string name="show_network_traffic_byte">Байт в секунду</string>
+    <string name="show_network_traffic_500">500 мс</string>
+    <string name="show_network_traffic_1000">1000 мс</string>
+    <string name="show_network_traffic_1500">1500 мс</string>
+    <string name="show_network_traffic_2000">2000 мс</string>
 
 </resources>
